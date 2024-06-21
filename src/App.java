@@ -36,5 +36,23 @@ public class App {
 
         System.out.println("===================================");
         System.out.println("Valor total del inventario: " + valorTotalInventario);
+
+        // deteminacion del producto mas caro y mas barato
+        System.out.println("===================================");
+        System.out.println("deteminacion del producto mas caro y mas barato");
+
+        float precioAlto = precioProducto[0], precioBajo = precioProducto[0];
+
+        for (int i = 1; i < cantidadProductos; i++) {
+            if (precioAlto > precioProducto[i]) {
+                precioAlto = precioProducto[i];
+            }
+
+            if (precioBajo < precioProducto[i]) {
+                precioAlto = precioProducto[i];
+            }
+        }
+
+        
     }
 }
