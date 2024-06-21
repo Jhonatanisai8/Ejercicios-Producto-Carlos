@@ -10,6 +10,12 @@ public class App {
         int cantidadProductos;
         System.out.print("Ingrese la cantidad de productos: ");
         cantidadProductos = leer.nextInt();
-        
+
+        // creamos los arreglos y les asignamos el tamaño ingresado por el usuario
+        String[] nombreProducto = new String[cantidadProductos];
+        float[] precioProducto = new float[cantidadProductos];
+        int[] stockProducto = new int[cantidadProductos];
+
+
     }
 }
