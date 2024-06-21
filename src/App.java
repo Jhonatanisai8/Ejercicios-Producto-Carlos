@@ -30,29 +30,40 @@ public class App {
 
         // calculamos el valor total del inventario
         float valorTotalInventario = 0;
-        for (int i = 0; i < precioProducto.length; i++) {
+        for (int i = 0; i < cantidadProductos; i++) {
             valorTotalInventario += precioProducto[i] * stockProducto[i];
         }
 
-        System.out.println("===================================");
-        System.out.println("Valor total del inventario: " + valorTotalInventario);
-
         // deteminacion del producto mas caro y mas barato
         System.out.println("===================================");
-        System.out.println("deteminacion del producto mas caro y mas barato");
+        System.out.println("Deteminacion del producto mas caro y mas barato");
 
         float precioAlto = precioProducto[0], precioBajo = precioProducto[0];
-
+        int posPrecioAlto = 0;
+        int posPrecioBajo = 0;
         for (int i = 1; i < cantidadProductos; i++) {
-            if (precioAlto > precioProducto[i]) {
+            if (precioAlto < precioProducto[i]) {
                 precioAlto = precioProducto[i];
+                posPrecioAlto = i;
             }
 
-            if (precioBajo < precioProducto[i]) {
-                precioAlto = precioProducto[i];
+            if (precioBajo > precioProducto[i]) {
+                precioBajo = precioProducto[i];
+                posPrecioBajo = i;
             }
         }
 
-        
+        // imprimimos el valor total del inventario, el precio y nombre del producto mas
+        // caro y barato
+        System.out.println("Nombre y Precio del producto mas caro y barato");
+        System.out.println("===================================");
+        System.out.println("Producto mas Caro: " +
+                "\nNombre: " + nombreProducto[posPrecioAlto] +
+                "\nPrecio: " + precioAlto);
+        System.out.println("Producto mas Barato: " +
+                "\nNombre: " + nombreProducto[posPrecioBajo] +
+                "\nPrecio: " + precioBajo);
+        System.out.println("===================================");
+        System.out.println("Valor total del inventario: " + valorTotalInventario);
     }
 }
