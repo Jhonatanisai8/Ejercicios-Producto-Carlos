@@ -28,7 +28,13 @@ public class App {
             stockProducto[i] = leer.nextInt();
         }
 
-        
+        // calculamos el valor total del inventario
+        float valorTotalInventario = 0;
+        for (int i = 0; i < precioProducto.length; i++) {
+            valorTotalInventario += precioProducto[i] * stockProducto[i];
+        }
 
+        System.out.println("===================================");
+        System.out.println("Valor total del inventario: " + valorTotalInventario);
     }
 }
