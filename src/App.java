@@ -10,12 +10,25 @@ public class App {
         int cantidadProductos;
         System.out.print("Ingrese la cantidad de productos: ");
         cantidadProductos = leer.nextInt();
+        System.out.println("===================================");
 
         // creamos los arreglos y les asignamos el tamaño ingresado por el usuario
         String[] nombreProducto = new String[cantidadProductos];
         float[] precioProducto = new float[cantidadProductos];
         int[] stockProducto = new int[cantidadProductos];
 
+        // solicitacion de datos
+
+        for (int i = 0; i < cantidadProductos; i++) {
+            System.out.print((i + 1) + ". Ingrese el nombre del producto: ");
+            nombreProducto[i] = leer.next();
+            System.out.print(". Ingrese el precio del producto: ");
+            precioProducto[i] = leer.nextFloat();
+            System.out.print(". Ingrese el stock del producto: ");
+            stockProducto[i] = leer.nextInt();
+        }
+
+        
 
     }
 }
